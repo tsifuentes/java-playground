@@ -1,8 +1,14 @@
 import java.util.ArrayList;
 
-public class Student implements IStudent{
+public class Student extends Persona implements IStudent{
 
     ArrayList<String> students = new ArrayList<>();
+
+    public Student(){}
+
+    public Student(String name){
+        add(name);
+    }
 
     @Override
     public void add(String name){

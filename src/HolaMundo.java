@@ -15,6 +15,8 @@ public class HolaMundo {
         student.delete(0);
         System.out.println("students = " + students);
 
+        Student studentPersona = new Student("Naty Sifuentes");
+        System.out.println("studentPersona.lastName = " + studentPersona.get(0));
         System.out.println("Teacher ==================================");
         Teacher teacher = new Teacher();
         teacher.add("Rosa Martinez");
