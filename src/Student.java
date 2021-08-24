@@ -8,6 +8,7 @@ public class Student extends Persona implements IStudent{
 
     public Student(String name){
         add(name);
+        super.name = name;
     }
 
     @Override

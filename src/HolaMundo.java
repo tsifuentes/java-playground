@@ -17,6 +17,8 @@ public class HolaMundo {
 
         Student studentPersona = new Student("Naty Sifuentes");
         System.out.println("studentPersona.lastName = " + studentPersona.get(0));
+        Persona studentPerson = new Student("Polimorfismo in action");
+        System.out.println("studentPerson.name = " + studentPerson.name);
         System.out.println("Teacher ==================================");
         Teacher teacher = new Teacher();
         teacher.add("Rosa Martinez");
