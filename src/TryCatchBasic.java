@@ -9,6 +9,7 @@ public class TryCatchBasic {
             JOptionPane.showMessageDialog(null, message);
         } catch (NumberFormatException e){
             JOptionPane.showMessageDialog(null, "Error, enter a number " + e.getMessage());
+            System.exit(0);
         }
     }
 }
