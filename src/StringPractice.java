@@ -53,5 +53,59 @@ public class StringPractice {
         String replaced = student.replace("e", "E").replace("s", "S");
         System.out.println("student = " + student);
         System.out.println("replaced = " + replaced);
+
+        getTimingConcat(500);
+        getTimingConcat(1000);
+        getTimingConcat(10000);
+        getTimingConcat(100000);
+        getTimingLiteral(500);
+        getTimingLiteral(1000);
+        getTimingLiteral(10000);
+        getTimingLiteral(100000);
+        getTimingBuilder(500);
+        getTimingBuilder(1000);
+        getTimingBuilder(10000);
+        getTimingBuilder(100000);
+    }
+
+    public static void getTimingConcat(long times){
+        String first = "First";
+        String second = "Second";
+        String third = first;
+
+        long start = System.currentTimeMillis();
+        for (int i = 0; i < times; i ++) {
+            first = first.concat(second).concat(third).concat("\n");
+        }
+        long end = System.currentTimeMillis();
+        System.out.println("Concat Timing for " + times + " = " + (end-start));
+    }
+
+    public static void getTimingLiteral(long times){
+        String first = "First";
+        String second = "Second";
+        String third = first;
+
+        long start = System.currentTimeMillis();
+        for (int i = 0; i < times; i ++) {
+            first += second + third + "\n";
+        }
+        long end = System.currentTimeMillis();
+        System.out.println("Literl Timing for " + times + " = " + (end-start));
+    }
+
+    public static void getTimingBuilder(long times){
+        String first = "First";
+        String second = "Second";
+        String third = first;
+
+        StringBuilder sb = new StringBuilder();
+
+        long start = System.currentTimeMillis();
+        for (int i = 0; i < times; i ++) {
+            sb.append(first).append(second).append(third).append("\n");
+        }
+        long end = System.currentTimeMillis();
+        System.out.println("Builder Timing for " + times + " = " + (end-start));
     }
 }
