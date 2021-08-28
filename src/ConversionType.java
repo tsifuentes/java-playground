@@ -16,5 +16,14 @@ public class ConversionType {
         System.out.println("String.valueOf(strDouble) = " + String.valueOf(strDouble));
         System.out.println("Boolean.toString(strBool) = " + Boolean.toString(strBool));
         System.out.println("String.valueOf(strBool) = " + String.valueOf(strBool));
+
+        short shortValue = (short)strIn;
+        double doubleValue = strIn;
+        float floatValue = (float)strDouble;
+        char charValue = (char)strIn;
+        System.out.println("shortValue = " + shortValue);
+        System.out.println("doubleValue = " + doubleValue);
+        System.out.println("floatValue = " + floatValue);
+        System.out.println("charValue = " + charValue);
     }
 }
