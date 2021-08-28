@@ -108,4 +108,28 @@ public class StringPractice {
         long end = System.currentTimeMillis();
         System.out.println("Builder Timing for " + times + " = " + (end-start));
     }
+
+    public static void validate(){
+        String stringA = null;
+        String stringB = null;
+        String stringC = null;
+        boolean isNull = stringA == null;
+        System.out.println("isNull = " + isNull);
+        if(isNull) {
+            stringA = "";
+            stringB = " ";
+            stringC = "test";
+        }
+
+        boolean isEmpty = stringA.isEmpty();
+        boolean isBlank = stringB.isBlank();
+        if(isEmpty){
+            System.out.println("isEmpty = " + stringA.toUpperCase());
+            System.out.println(" = ".concat(stringA));
+        }
+        
+        if(isBlank) {
+            System.out.println("stringB = " + stringB);
+        }
+    }
 }
