@@ -1,27 +1,31 @@
 public class StringPractice {
     public static void main(String[] args) {
 
-//        comparison();
-//        concatenate();
-//        immutable();
-//
-//        getTimingConcat(500);
-//        getTimingConcat(1000);
-//        getTimingConcat(10000);
-//        getTimingConcat(100000);
-//        getTimingLiteral(500);
-//        getTimingLiteral(1000);
-//        getTimingLiteral(10000);
-//        getTimingLiteral(100000);
-//        getTimingBuilder(500);
-//        getTimingBuilder(1000);
-//        getTimingBuilder(10000);
-//        getTimingBuilder(100000);
+        comparison();
+        concatenate();
+        immutable();
+
+        getTimingConcat(500);
+        getTimingConcat(1000);
+        getTimingConcat(10000);
+        getTimingConcat(100000);
+        getTimingLiteral(500);
+        getTimingLiteral(1000);
+        getTimingLiteral(10000);
+        getTimingLiteral(100000);
+        getTimingBuilder(500);
+        getTimingBuilder(1000);
+        getTimingBuilder(10000);
+        getTimingBuilder(100000);
 
         allMethods();
         getExt("main.js");
         getExt("main.docx");
         getExt("main.jpg");
+
+        stringToArray("thomas.sifuentes.pdf", 5);
+        stringToArray("nataly.sifuentes.xlsx", 9);
+        stringToArray("rosa.martinez.jpg", 6);
     }
 
     public static void comparison(){
@@ -170,5 +174,28 @@ public class StringPractice {
         System.out.println("file = " + file);
         System.out.println("file.length() = " + file.length());
         System.out.println("file.substring() = " + file.substring(i + 1));
+    }
+
+    public static void stringToArray(String string, int index) {
+        System.out.println("string = " + string);
+        System.out.println("string.length() = " + string.length());
+        System.out.println("string.toCharArray() = " + string.toCharArray());
+        char[] chars = string.toCharArray();
+        System.out.println("chars.length = " + chars.length);
+        for (int i = 0; i < chars.length; i ++){
+            System.out.print("-" + chars[i]);
+        }
+
+        String[] strings = string.split("" + chars[index]);
+        System.out.println("strings.length = " + strings.length);
+        for (int j = 0; j < strings.length; j ++){
+            System.out.print("-" + strings[j]);
+        }
+
+        String[] extension = string.split("\\."); // [.]
+        for (int k = 0; k < extension.length; k ++){
+            System.out.print("-" + extension[k]);
+        }
+        System.out.println("extension[extension.length - 1] = " + extension[extension.length - 1]);
     }
 }
