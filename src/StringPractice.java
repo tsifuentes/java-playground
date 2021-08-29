@@ -1,22 +1,22 @@
 public class StringPractice {
     public static void main(String[] args) {
 
-        comparison();
-        concatenate();
-        immutable();
-
-        getTimingConcat(500);
-        getTimingConcat(1000);
-        getTimingConcat(10000);
-        getTimingConcat(100000);
-        getTimingLiteral(500);
-        getTimingLiteral(1000);
-        getTimingLiteral(10000);
-        getTimingLiteral(100000);
-        getTimingBuilder(500);
-        getTimingBuilder(1000);
-        getTimingBuilder(10000);
-        getTimingBuilder(100000);
+//        comparison();
+//        concatenate();
+//        immutable();
+//
+//        getTimingConcat(500);
+//        getTimingConcat(1000);
+//        getTimingConcat(10000);
+//        getTimingConcat(100000);
+//        getTimingLiteral(500);
+//        getTimingLiteral(1000);
+//        getTimingLiteral(10000);
+//        getTimingLiteral(100000);
+//        getTimingBuilder(500);
+//        getTimingBuilder(1000);
+//        getTimingBuilder(10000);
+//        getTimingBuilder(100000);
 
         allMethods();
     }
@@ -151,5 +151,14 @@ public class StringPractice {
         System.out.println("fullName.substring(2) = " + fullName.substring(2));
         System.out.println("fullName.substring(2) = " + fullName.substring(3,8));
         System.out.println("fullName.charAt(10) = " + fullName.charAt(10));
+
+        String word = "trabalenguas";
+        System.out.println("word.replace(\"a\", \"A\") = " + word.replace("a", "A"));
+        System.out.println("word.indexOf(\"a\") = " + word.indexOf("a"));
+        System.out.println("word.lastIndexOf(\"a\") = " + word.lastIndexOf("a"));
+        System.out.println("word.contains(\"bal\") = " + word.contains("bal"));
+        System.out.println("word.startsWith(\"tr\") = " + word.startsWith("tr"));
+        System.out.println("word.endsWith(\"as\") = " + word.endsWith("as"));
+        System.out.println(" = ".trim() + "WORD");
     }
 }
