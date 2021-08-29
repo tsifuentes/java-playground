@@ -19,6 +19,9 @@ public class StringPractice {
 //        getTimingBuilder(100000);
 
         allMethods();
+        getExt("main.js");
+        getExt("main.docx");
+        getExt("main.jpg");
     }
 
     public static void comparison(){
@@ -160,5 +163,12 @@ public class StringPractice {
         System.out.println("word.startsWith(\"tr\") = " + word.startsWith("tr"));
         System.out.println("word.endsWith(\"as\") = " + word.endsWith("as"));
         System.out.println(" = ".trim() + "WORD");
+    }
+
+    public static void getExt(String file) {
+        int i = file.lastIndexOf(".");
+        System.out.println("file = " + file);
+        System.out.println("file.length() = " + file.length());
+        System.out.println("file.substring() = " + file.substring(i + 1));
     }
 }
