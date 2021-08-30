@@ -24,5 +24,9 @@ public class HolaMundo {
         teacher.add("Rosa Martinez");
         String firstTeacher = teacher.get(0);
         System.out.println("firstTeacher = " + firstTeacher);
+
+        DBSingleton db1 = DBSingleton.getConnection();
+        DBSingleton db2 = DBSingleton.getConnection();
+        System.out.println("(db2 == db1) = " + (db2 == db1));
     }
 }
