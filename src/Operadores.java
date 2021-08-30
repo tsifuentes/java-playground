@@ -3,7 +3,8 @@ import javax.swing.*;
 public class Operadores {
     public static void main(String[] args) {
 //        arithmetic();
-        assignments();
+//        assignments();
+        unaries();
     }
 
     public static void arithmetic(){
@@ -53,5 +54,15 @@ public class Operadores {
         string += numberB;
         string += " is the second Number.";
         System.out.println("Topic = " + string);
+    }
+
+    public static void unaries(){
+        int numberA = Integer.parseInt(JOptionPane.showInputDialog("Enter a positive Number"));
+        int numberB = Integer.parseInt(JOptionPane.showInputDialog("Enter a negative Number"));
+
+        System.out.println("+number: (1)*A = " + +numberA);
+        System.out.println("-number: (-1)*A = " + -numberA);
+        System.out.println("+number: (1)*B = " + +numberB);
+        System.out.println("-number: (-1)*B = " + -numberB);
     }
 }
