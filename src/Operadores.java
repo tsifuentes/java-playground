@@ -2,7 +2,8 @@ import javax.swing.*;
 
 public class Operadores {
     public static void main(String[] args) {
-        arithmetic();
+//        arithmetic();
+        assignments();
     }
 
     public static void arithmetic(){
@@ -33,5 +34,24 @@ public class Operadores {
         } else {
             System.out.println("numberB is odd");
         }
+    }
+
+    public static void assignments() {
+        int numberA = Integer.parseInt(JOptionPane.showInputDialog("Enter first Number"));
+        int numberB = Integer.parseInt(JOptionPane.showInputDialog("Enter second Number"));
+        System.out.println("numberA = " + numberA);
+        System.out.println("numberB = " + numberB);
+        System.out.println("(numberA += numberB) = " + (numberA += numberB));
+        System.out.println("(numberA -= numberB) = " + (numberA -= numberB));
+        System.out.println("(numberA *= numberB) = " + (numberA *= numberB));
+        System.out.println("(numberA /= numberB) = " + (numberA /= numberB));
+        System.out.println("(numberA %= numberB) = " + (numberA %= numberB));
+
+        String string = "The";
+        string += numberA;
+        string += " is the first Number, then the";
+        string += numberB;
+        string += " is the second Number.";
+        System.out.println("Topic = " + string);
     }
 }
