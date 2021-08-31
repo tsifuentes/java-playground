@@ -2,10 +2,11 @@ import javax.swing.*;
 
 public class Operadores {
     public static void main(String[] args) {
-        arithmetic();
-        assignments();
-        unaries();
-        increaseDecrease();
+//        arithmetic();
+//        assignments();
+//        unaries();
+//        increaseDecrease();
+        relational();
     }
 
     public static void arithmetic(){
@@ -87,5 +88,23 @@ public class Operadores {
         System.out.println("numberA-- = " + numberE);
         System.out.println("Last numberA = " + numberA);
 
+    }
+
+    public static void relational(){
+        int intVal = 10;
+        byte byteVal = 3;
+        float floatVal = 1.35e3f;
+        double douVal = 1.34e-3;
+        boolean boolVal = false;
+
+        System.out.println(boolVal + " == false = " + (boolVal == false));
+        System.out.println(boolVal + " == true = " + (boolVal == true));
+        System.out.println("!" + boolVal + " = " + (!boolVal));
+        System.out.println(intVal + " == " + byteVal + " = " + (intVal == byteVal));
+        System.out.println(intVal + " != " + byteVal + " = " + (intVal != byteVal));
+        System.out.println(floatVal + " > " + douVal + " = " + (floatVal > douVal));
+        System.out.println(floatVal + " < " + douVal + " = " + (floatVal < douVal));
+        System.out.println(floatVal + " >= " + douVal + " = " + (floatVal >= douVal));
+        System.out.println(floatVal + " <= " + douVal + " = " + (floatVal <= douVal));
     }
 }
