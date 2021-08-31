@@ -2,9 +2,10 @@ import javax.swing.*;
 
 public class Operadores {
     public static void main(String[] args) {
-//        arithmetic();
-//        assignments();
+        arithmetic();
+        assignments();
         unaries();
+        increaseDecrease();
     }
 
     public static void arithmetic(){
@@ -60,9 +61,31 @@ public class Operadores {
         int numberA = Integer.parseInt(JOptionPane.showInputDialog("Enter a positive Number"));
         int numberB = Integer.parseInt(JOptionPane.showInputDialog("Enter a negative Number"));
 
-        System.out.println("+number: (1)*A = " + +numberA);
-        System.out.println("-number: (-1)*A = " + -numberA);
-        System.out.println("+number: (1)*B = " + +numberB);
-        System.out.println("-number: (-1)*B = " + -numberB);
+        System.out.println("+number: (1)*A = " + (+numberA));
+        System.out.println("-number: (-1)*A = " + (-numberA));
+        System.out.println("+number: (1)*B = " + (+numberB));
+        System.out.println("-number: (-1)*B = " + (-numberB));
+    }
+
+    public static void increaseDecrease(){
+        int numberA = Integer.parseInt(JOptionPane.showInputDialog("Enter a number"));
+        System.out.println("Original numberA = " + numberA);
+
+        int numberB = ++numberA;
+        System.out.println("++numberA = " + numberB);
+        System.out.println("New numberA = " + numberA);
+
+        int numberC = numberA++;
+        System.out.println("numberA++ = " + numberC);
+        System.out.println("New numberA = " + numberA);
+
+        int numberD = --numberA;
+        System.out.println("--numberA = " + numberD);
+        System.out.println("New numberA = " + numberA);
+
+        int numberE = numberA--;
+        System.out.println("numberA-- = " + numberE);
+        System.out.println("Last numberA = " + numberA);
+
     }
 }
