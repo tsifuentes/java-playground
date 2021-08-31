@@ -7,13 +7,15 @@ public class Operadores {
                 "2. Assignments\n" +
                 "3. Unary\n" +
                 "4. Increase\\Decrease\n" +
-                "5. Relational"));
+                "5. Relational\n" +
+                "6. Logical"));
         switch (option) {
             case 1: arithmetic(); break;
             case 2: assignments(); break;
             case 3: unaries(); break;
             case 4: increaseDecrease(); break;
             case 5: relational(); break;
+            case 6: logical(); break;
         }
         int tryAgain = JOptionPane.showConfirmDialog(null, "Would you like to try with another option?", "PLAYING WITH OPERATORS", 1);
         if(tryAgain == 0) {
@@ -122,5 +124,18 @@ public class Operadores {
         System.out.println(floatVal + " < " + douVal + " = " + (floatVal < douVal));
         System.out.println(floatVal + " >= " + douVal + " = " + (floatVal >= douVal));
         System.out.println(floatVal + " <= " + douVal + " = " + (floatVal <= douVal));
+    }
+
+    public static void logical(){
+        System.out.println("************LOGICAL************");
+        System.out.println("true && true = " + (true && true));
+        System.out.println("true && false = " + (true && false));
+        System.out.println("true || false = " + (true || false));
+        System.out.println("false || true = " + (false || true));
+        System.out.println("true && true || false = " + (true && true || false));
+        System.out.println("(true && false) || false = " + ((true && false) || false));
+        System.out.println("false || true && false || false = " + (false || true && false || false));
+        System.out.println("(false || true) && true || false = " + ((false || true) && true || false));
+        System.out.println("false || true && (false || false) = " + (false || true && (false || false)));
     }
 }
