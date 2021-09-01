@@ -9,7 +9,8 @@ public class Operadores {
                 "4. Increase\\Decrease\n" +
                 "5. Relational\n" +
                 "6. Logical\n" +
-                "7. Ternary"));
+                "7. Ternary\n" +
+                "8. InstanceOf"));
         switch (option) {
             case 1: arithmetic(); break;
             case 2: assignments(); break;
@@ -18,6 +19,7 @@ public class Operadores {
             case 5: relational(); break;
             case 6: logical(); break;
             case 7: ternary(); break;
+            case 8: instanceOf(); break;
         }
         int tryAgain = JOptionPane.showConfirmDialog(null, "Would you like to try with another option?", "PLAYING WITH OPERATORS", 1);
         if(tryAgain == 0) {
@@ -158,5 +160,25 @@ public class Operadores {
         double maxGrade = grade1 > grade2 ? grade1 : grade2;
         maxGrade = maxGrade > grade3 ? maxGrade : grade3;
         System.out.println("maxGrade = " + maxGrade);
+    }
+
+    public static void instanceOf(){
+        String text = "Hello world";
+        Integer integer = 7;
+        Double doubleVal = 1.5e3;
+        Float floatVal = 1.3e-3f;
+
+        System.out.println("text instanceof String = " + text instanceof String);
+        System.out.println("text instanceof Object = " + text instanceof Object);
+        System.out.println("(integer instanceof Integer) = " + (integer instanceof Integer));
+        System.out.println("(integer instanceof Object) = " + (integer instanceof Object));
+        System.out.println("(integer instanceof Number) = " + (integer instanceof Number));
+        System.out.println("(doubleVal instanceof Double) = " + (doubleVal instanceof Double));
+        System.out.println("(doubleVal instanceof Number) = " + (doubleVal instanceof Number));
+        System.out.println("(doubleVal instanceof Object) = " + (doubleVal instanceof Object));
+        System.out.println("floatVal instanceOf Float = " + (floatVal instanceof Float));
+        System.out.println("floatVal instanceOf Number = " + (floatVal instanceof Number));
+        System.out.println("floatVal instanceOf Object = " + (floatVal instanceof Object));
+
     }
 }
