@@ -8,7 +8,8 @@ public class Operadores {
                 "3. Unary\n" +
                 "4. Increase\\Decrease\n" +
                 "5. Relational\n" +
-                "6. Logical"));
+                "6. Logical\n" +
+                "7. Ternary"));
         switch (option) {
             case 1: arithmetic(); break;
             case 2: assignments(); break;
@@ -16,6 +17,7 @@ public class Operadores {
             case 4: increaseDecrease(); break;
             case 5: relational(); break;
             case 6: logical(); break;
+            case 7: ternary(); break;
         }
         int tryAgain = JOptionPane.showConfirmDialog(null, "Would you like to try with another option?", "PLAYING WITH OPERATORS", 1);
         if(tryAgain == 0) {
@@ -137,5 +139,24 @@ public class Operadores {
         System.out.println("false || true && false || false = " + (false || true && false || false));
         System.out.println("(false || true) && true || false = " + ((false || true) && true || false));
         System.out.println("false || true && (false || false) = " + (false || true && (false || false)));
+    }
+    
+    public static void ternary(){
+        System.out.println("************TERNARY************");
+        double grade1 = Double.parseDouble(JOptionPane.showInputDialog("Enter the first grade"));
+        double grade2 = Double.parseDouble(JOptionPane.showInputDialog("Enter the second grade"));
+        double grade3 = Double.parseDouble(JOptionPane.showInputDialog("Enter the third grade"));
+
+        System.out.println("grade1 = " + grade1);
+        System.out.println("grade2 = " + grade2);
+        System.out.println("grade3 = " + grade3);
+        double average = (grade1 + grade2 + grade3) / 3;
+        String status = average > 10 ? "Approved" : "Rejected";
+        System.out.println("average = " + average);
+        System.out.println("status = " + status);
+        
+        double maxGrade = grade1 > grade2 ? grade1 : grade2;
+        maxGrade = maxGrade > grade3 ? maxGrade : grade3;
+        System.out.println("maxGrade = " + maxGrade);
     }
 }
