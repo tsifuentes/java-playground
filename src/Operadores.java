@@ -167,6 +167,11 @@ public class Operadores {
         Integer integer = 7;
         Double doubleVal = 1.5e3;
         Float floatVal = 1.3e-3f;
+        Object obj = "obj String type";
+        Object intVal = 4;
+        Number numberFloatVal = 3.4f;
+        Number numberDoubleVal = 3.4e-40d;
+        Number numberLongVal = 3234443;
 
         System.out.println("text instanceof String = " + text instanceof String);
         System.out.println("text instanceof Object = " + text instanceof Object);
@@ -179,6 +184,10 @@ public class Operadores {
         System.out.println("floatVal instanceOf Float = " + (floatVal instanceof Float));
         System.out.println("floatVal instanceOf Number = " + (floatVal instanceof Number));
         System.out.println("floatVal instanceOf Object = " + (floatVal instanceof Object));
+        System.out.println("obj instanceof String = " + obj instanceof String);
+        System.out.println("intVal instanceof Integer = " + (intVal instanceof Integer));
+        System.out.println("numberFloatVal instanceof Float = " + (numberFloatVal instanceof Float));
+        System.out.println("(numberDoubleVal instanceof Double = " + (numberDoubleVal instanceof Double));
 
     }
 }
