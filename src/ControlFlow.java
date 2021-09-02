@@ -12,7 +12,16 @@ public class ControlFlow {
             case 2:
                 checkLeapYear();
                 break;
+            default:
+                int tryAgain = JOptionPane.showConfirmDialog(null, "Would you like to try with another option?", "PLAYING WITH OPERATORS", 1);
+                if(tryAgain == 0) {
+                    main(args);
+                } else {
+                    JOptionPane.showMessageDialog(null, "Thanks for playing! Back soon!");
+                }
+                break;
         }
+
     }
 
     public static void checkYourGrade(){
