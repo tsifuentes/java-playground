@@ -10,7 +10,8 @@ public class Operadores {
                 "5. Relational\n" +
                 "6. Logical\n" +
                 "7. Ternary\n" +
-                "8. InstanceOf"));
+                "8. InstanceOf\n" +
+                "9. Precedence"));
         switch (option) {
             case 1: arithmetic(); break;
             case 2: assignments(); break;
@@ -20,6 +21,7 @@ public class Operadores {
             case 6: logical(); break;
             case 7: ternary(); break;
             case 8: instanceOf(); break;
+            case 9: precedence(); break;
         }
         int tryAgain = JOptionPane.showConfirmDialog(null, "Would you like to try with another option?", "PLAYING WITH OPERATORS", 1);
         if(tryAgain == 0) {
@@ -163,6 +165,7 @@ public class Operadores {
     }
 
     public static void instanceOf(){
+        System.out.println("************INSTANCE OF************");
         String text = "Hello world";
         Integer integer = 7;
         Double doubleVal = 1.5e3;
@@ -173,8 +176,8 @@ public class Operadores {
         Number numberDoubleVal = 3.4e-40d;
         Number numberLongVal = 3234443;
 
-        System.out.println("text instanceof String = " + text instanceof String);
-        System.out.println("text instanceof Object = " + text instanceof Object);
+        System.out.println("text instanceof String = " + (text instanceof String));
+        System.out.println("text instanceof Object = " + (text instanceof Object));
         System.out.println("(integer instanceof Integer) = " + (integer instanceof Integer));
         System.out.println("(integer instanceof Object) = " + (integer instanceof Object));
         System.out.println("(integer instanceof Number) = " + (integer instanceof Number));
@@ -184,10 +187,27 @@ public class Operadores {
         System.out.println("floatVal instanceOf Float = " + (floatVal instanceof Float));
         System.out.println("floatVal instanceOf Number = " + (floatVal instanceof Number));
         System.out.println("floatVal instanceOf Object = " + (floatVal instanceof Object));
-        System.out.println("obj instanceof String = " + obj instanceof String);
+        System.out.println("obj instanceof String = " + (obj instanceof String));
         System.out.println("intVal instanceof Integer = " + (intVal instanceof Integer));
         System.out.println("numberFloatVal instanceof Float = " + (numberFloatVal instanceof Float));
         System.out.println("(numberDoubleVal instanceof Double = " + (numberDoubleVal instanceof Double));
 
+    }
+
+    public static void precedence(){
+        System.out.println("************PRECEDENCE************");
+        double f1 = 10d;
+        double f2 = 5d;
+        double total1 = f1 + 10 / f2 * 10;
+        double total2 = (f1 + 10) / f2 * 10;
+        double total3 = f1 + 10 / (f2 * 10);
+        System.out.println("--f1 = " + f1);
+        double total4 = --f1 + 10 / (f2++ * 10);
+        double total5 = f1-- + 10 / (++f2 * 10);
+        System.out.println("total1 = " + total1);
+        System.out.println("total2 = " + total2);
+        System.out.println("total3 = " + total3);
+        System.out.println("total4 = " + total4);
+        System.out.println("total5 = " + total5);
     }
 }
