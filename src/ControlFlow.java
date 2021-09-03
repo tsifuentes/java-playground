@@ -4,13 +4,17 @@ public class ControlFlow {
     public static void main(String[] args) {
         int option = Integer.parseInt(JOptionPane.showInputDialog("Choose an option: \n" +
                 "1. Check your grade\n" +
-                "2. Check a leap year\n"));
+                "2. Check a leap year\n" +
+                "3. For loop"));
         switch (option) {
             case 1:
                 checkYourGrade();
                 break;
             case 2:
                 checkLeapYear();
+                break;
+            case 3:
+                forLoop();
                 break;
             default:
                 int tryAgain = JOptionPane.showConfirmDialog(null, "Would you like to try with another option?", "PLAYING WITH OPERATORS", 1);
@@ -47,5 +51,25 @@ public class ControlFlow {
         } else {
             System.out.println("Oww! It is not a leap year!");
         }
+    }
+
+    public static void forLoop(){
+        for (int i = 0; i < 10; i++){
+            System.out.println("Increasing at " + i);
+        }
+
+        for (int i = 10; i >=0; i--){
+            System.out.println("Decreasing at " + i);
+        }
+        int i = 0; // after this i cannot be re-declared since it will exist in the method scope
+        for(;;){
+            if(i > 5) {
+                System.out.println("Break loop");
+                break;
+            }
+            System.out.println("Print without arguments at " + i);
+            i++;
+        }
+        System.out.println("Value of i = " + i);
     }
 }
