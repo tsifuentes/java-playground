@@ -6,7 +6,8 @@ public class ControlFlow {
                 "1. Check your grade\n" +
                 "2. Check a leap year\n" +
                 "3. For loop\n" +
-                "4. While / Do While\n"));
+                "4. While / Do While\n" +
+                "5. For each"));
         switch (option) {
             case 1:
                 checkYourGrade();
@@ -19,6 +20,9 @@ public class ControlFlow {
                 break;
             case 4:
                 whileDoWhile();
+                break;
+            case 5:
+                forEach();
                 break;
             default:
                 int tryAgain = JOptionPane.showConfirmDialog(null, "Would you like to try with another option?", "PLAYING WITH OPERATORS", 1);
@@ -110,5 +114,19 @@ public class ControlFlow {
             System.out.println("Print at least once at " + i);
             i ++;
         } while (i < 7);
+    }
+
+    public static void forEach(){
+        int[] numbers = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13};
+        for(int number: numbers) {
+            if(number % 2 != 0) {
+                System.out.println("number = " + number);
+            }
+        }
+
+        String[] names = {"Thomas", "Naty", "Norman", "Rosa"};
+        for(String name: names) {
+            System.out.println("name = " + name);
+        }
     }
 }
