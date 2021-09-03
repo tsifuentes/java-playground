@@ -71,5 +71,21 @@ public class ControlFlow {
             i++;
         }
         System.out.println("Value of i = " + i);
+
+        for (int j = 0; j < i; j ++){
+            if(j < 3) {
+                System.out.println("We are ok, we are under 3: " + j);
+                continue;
+            }
+            if(j ==5) {
+                System.out.println("Cut over 5: " + j);
+                break;
+            }
+            System.out.println("We are over 3: " + j);
+        }
+
+        for(int j = 0, k = 5; j < k; j++){
+            System.out.println("Values i < k: " + j + " < " + k);
+        }
     }
 }
