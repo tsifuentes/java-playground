@@ -5,7 +5,8 @@ public class ControlFlow {
         int option = Integer.parseInt(JOptionPane.showInputDialog("Choose an option: \n" +
                 "1. Check your grade\n" +
                 "2. Check a leap year\n" +
-                "3. For loop"));
+                "3. For loop\n" +
+                "4. While / Do While\n"));
         switch (option) {
             case 1:
                 checkYourGrade();
@@ -15,6 +16,9 @@ public class ControlFlow {
                 break;
             case 3:
                 forLoop();
+                break;
+            case 4:
+                whileDoWhile();
                 break;
             default:
                 int tryAgain = JOptionPane.showConfirmDialog(null, "Would you like to try with another option?", "PLAYING WITH OPERATORS", 1);
@@ -87,5 +91,24 @@ public class ControlFlow {
         for(int j = 0, k = 5; j < k; j++){
             System.out.println("Values i < k: " + j + " < " + k);
         }
+    }
+
+    public static void whileDoWhile(){
+        boolean condition = true;
+        int i = 0;
+        while (condition) {
+            if(condition) {
+                System.out.println("Condition at " + i + " is: " + condition);
+            }
+            if(i > 5) {
+                condition = false;
+            }
+            i++;
+        }
+
+        do {
+            System.out.println("Print at least once at " + i);
+            i ++;
+        } while (i < 7);
     }
 }
