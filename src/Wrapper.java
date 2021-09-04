@@ -1,7 +1,10 @@
+import java.lang.reflect.Method;
+
 public class Wrapper {
     public static void main(String[] args) {
         boxingInt();
         unboxInt();
+        getClassInt();
     }
 
     public static void boxingInt(){
@@ -29,5 +32,17 @@ public class Wrapper {
         int intValue = objInt;
         System.out.println("intValue == objInt = " + (intValue == objInt));
         System.out.println("intValue == objInt.intValue() = " + (intValue == objInt.intValue()));
+    }
+
+    public static void getClassInt(){
+        Integer objInt = 12343;
+        Class intClass = objInt.getClass();
+        System.out.println("intClass = " + intClass);
+        System.out.println("intClass.getName() = " + intClass.getName());
+        for(Method m: intClass.getMethods()){
+            System.out.print(" | " + m.getName());
+        }
+        System.out.println();
+        System.out.println("intClass.getPackage() = " + intClass.getPackage());
     }
 }
