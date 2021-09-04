@@ -7,7 +7,8 @@ public class ControlFlow {
                 "2. Check a leap year\n" +
                 "3. For loop\n" +
                 "4. While / Do While\n" +
-                "5. For each"));
+                "5. For each\n" +
+                "6. With labels"));
         switch (option) {
             case 1:
                 checkYourGrade();
@@ -23,6 +24,9 @@ public class ControlFlow {
                 break;
             case 5:
                 forEach();
+                break;
+            case 6:
+                withLabel();
                 break;
             default:
                 int tryAgain = JOptionPane.showConfirmDialog(null, "Would you like to try with another option?", "PLAYING WITH OPERATORS", 1);
@@ -127,6 +131,33 @@ public class ControlFlow {
         String[] names = {"Thomas", "Naty", "Norman", "Rosa"};
         for(String name: names) {
             System.out.println("name = " + name);
+        }
+    }
+
+    public static void withLabel(){
+        withFor:
+        for (int i = 1; i <= 3; i ++) {
+            for (int j = 1; j <= 5; j++) {
+                System.out.print(j);
+                if( j == i) {
+                    System.out.println("--------------");
+                    continue withFor;
+                }
+            }
+        }
+        
+        withWhile:
+        for (int i = 1; i < 5; i ++) {
+            int j = 0;
+            while (i > j) {
+                System.out.print(j);
+                if(j == 4) {
+                    System.out.println("-------");
+                    continue withWhile;
+                }
+                j++;
+            }
+            System.out.println();
         }
     }
 }
