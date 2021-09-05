@@ -10,6 +10,9 @@ public class Arguments {
         referenceAsArgument(numbers);
         System.out.println("End reference");
         referenceAsArgumentImmutable(new int[]{1,2,3,4,5});
+
+        Student student = new Student("Thomas Sifuentes");
+        refAsArgument(student);
     }
 
     public static void testValueAsArgument(int age, String name){
@@ -30,5 +33,10 @@ public class Arguments {
             System.out.print(number + " - ");
             number += 10;
         }
+        System.out.println();
+    }
+
+    public static void refAsArgument(Student student){
+        System.out.println("Sudent name = " + student.name);
     }
 }
