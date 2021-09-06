@@ -16,5 +16,21 @@ public class Dates {
         System.out.println("dateText = " + dateText2);
         System.out.println("dateText = " + dateText3);
         System.out.println("dateText = " + dateText4);
+
+        getTime();
+    }
+
+    public static void getTime(){
+        Date dateStart = new Date();
+        System.out.println("dateStart = " + dateStart);
+        long time = 0;
+        for (int i = 0; i <= 1000000; i++) {
+            time += i;
+        }
+        Date dateEnd = new Date();
+        System.out.println("dateEnd = " + dateEnd);
+        long latency = dateEnd.getTime() - dateStart.getTime();
+        System.out.println("time = " + time);
+        System.out.println("latency = " + latency);
     }
 }
