@@ -1,6 +1,8 @@
+import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
+import java.util.Scanner;
 
 public class Dates {
     public static void main(String[] args) {
@@ -22,6 +24,7 @@ public class Dates {
 
         System.out.println("=======");
         calendar();
+        parseStringDate();
     }
 
     public static void getTime(){
@@ -65,5 +68,18 @@ public class Dates {
         System.out.println("calendar.getTime() = " + calendar.getTime());
         String dateLast2 = df.format(calendar.getTime());
         System.out.println("date 12H = " + dateLast2);
+    }
+
+    public static void parseStringDate(){
+        Scanner s = new Scanner(System.in);
+        SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd");
+        System.out.println("Enter a date with format 'yyyy-MM-dd': ");
+        try {
+            Date date = df.parse(s.next());
+            System.out.println("date = " + date);
+            System.out.println("df.format(date) = " + df.format(date));
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
     }
 }
