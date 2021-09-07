@@ -78,8 +78,33 @@ public class Dates {
             Date date = df.parse(s.next());
             System.out.println("date = " + date);
             System.out.println("df.format(date) = " + df.format(date));
+            compareDates(date);
         } catch (ParseException e) {
             e.printStackTrace();
         }
+    }
+
+    public static void compareDates(Date date){
+        Date currentDate = new Date();
+        System.out.println("currentDate = " + currentDate);
+        if(date.after(currentDate)) {
+            System.out.println("Date is after of current date");
+        } else if(date.before(currentDate)) {
+            System.out.println("Date is before of current date");
+        } else if(date.equals(currentDate)) {
+            System.out.println("Date is the same, almost impossible");
+        }
+
+        Calendar calendarDate = Calendar.getInstance();
+        Date currentDateWithCalendar = calendarDate.getTime();
+        System.out.println("currentDateWithCalendar = " + currentDateWithCalendar);
+        if(date.compareTo(currentDateWithCalendar) > 0) {
+            System.out.println("Date is after of current date");
+        } else if(date.compareTo(currentDateWithCalendar) < 0) {
+            System.out.println("Date is before of current date");
+        } else if(date.compareTo(currentDateWithCalendar) == 0) {
+            System.out.println("Date is the same, almost impossible");
+        }
+
     }
 }
