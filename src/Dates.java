@@ -1,4 +1,5 @@
 import java.text.SimpleDateFormat;
+import java.util.Calendar;
 import java.util.Date;
 
 public class Dates {
@@ -18,6 +19,9 @@ public class Dates {
         System.out.println("dateText = " + dateText4);
 
         getTime();
+
+        System.out.println("=======");
+        calendar();
     }
 
     public static void getTime(){
@@ -32,5 +36,34 @@ public class Dates {
         long latency = dateEnd.getTime() - dateStart.getTime();
         System.out.println("time = " + time);
         System.out.println("latency = " + latency);
+    }
+
+    public static void calendar(){
+        Calendar calendar = Calendar.getInstance();
+        System.out.println("calendar = " + calendar);
+
+        Date date = calendar.getTime();
+        System.out.println("calendar.getTime() = " + date);
+
+        calendar.set(2021, 0, 12, 20, 12, 20);
+        System.out.println("calendar.getTime() = " + calendar.getTime());
+
+        calendar.set(Calendar.YEAR, 2019);
+        calendar.set(Calendar.MONTH, 0);
+        calendar.set(Calendar.HOUR_OF_DAY, 21);
+        calendar.set(Calendar.DAY_OF_MONTH, 20);
+        calendar.set(Calendar.MINUTE, 59);
+        calendar.set(Calendar.MILLISECOND, 100);
+
+        SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss.SSS");
+        System.out.println("calendar.getTime() = " + calendar.getTime());
+        String dateLast = df.format(calendar.getTime());
+        System.out.println("date 24H = " + dateLast);
+
+        calendar.set(Calendar.HOUR, 9);
+        calendar.set(Calendar.AM_PM, Calendar.PM);
+        System.out.println("calendar.getTime() = " + calendar.getTime());
+        String dateLast2 = df.format(calendar.getTime());
+        System.out.println("date 12H = " + dateLast2);
     }
 }
