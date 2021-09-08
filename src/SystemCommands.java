@@ -1,11 +1,13 @@
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
+import java.util.Map;
 import java.util.Properties;
 
 public class SystemCommands {
     public static void main(String[] args) {
         props();
         getProperties();
+        getEnvVars();
     }
 
     public static void props() {
@@ -43,5 +45,22 @@ public class SystemCommands {
             System.out.println("File does not exist = " + e);
         }
 
+    }
+
+    public static void getEnvVars(){
+        Map<String, String> envVar = System.getenv();
+        System.out.println("envVar = " + envVar);
+
+        String username = System.getenv("USERNAME");
+        System.out.println("username = " + username);
+
+        String javaHome = System.getenv("JAVA_HOME");
+        System.out.println("javaHome = " + javaHome);
+
+        String temp = envVar.get("TEMP");
+        System.out.println("temp = " + temp);
+
+        String path = envVar.get("Path");
+        System.out.println("path = " + path);
     }
 }
