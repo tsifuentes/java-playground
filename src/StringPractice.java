@@ -6,17 +6,29 @@ public class StringPractice {
         immutable();
 
         getTimingConcat(500);
+        System.gc();
         getTimingConcat(1000);
+        System.gc();
         getTimingConcat(10000);
+        System.gc();
         getTimingConcat(100000);
+        System.gc();
         getTimingLiteral(500);
+        System.gc();
         getTimingLiteral(1000);
+        System.gc();
         getTimingLiteral(10000);
+        System.gc();
         getTimingLiteral(100000);
+        System.gc();
         getTimingBuilder(500);
+        System.gc();
         getTimingBuilder(1000);
+        System.gc();
         getTimingBuilder(10000);
+        System.gc();
         getTimingBuilder(100000);
+        System.gc();
 
         allMethods();
         getExt("main.js");

@@ -32,7 +32,7 @@ public class SystemCommands {
 
     public static void getProperties(){
         try {
-            FileInputStream config = new FileInputStream("src/config.properties");
+            FileInputStream config = new FileInputStream("src/configx.properties");
             Properties properties = new Properties(System.getProperties());
             properties.load(config);
             properties.setProperty("config.set.value", "THSMIT");
@@ -42,9 +42,10 @@ public class SystemCommands {
             p.list(System.out);
             System.out.println("System.getProperty(\"config.set.value\") = " + System.getProperty("config.set.value"));
         } catch (Exception e) {
-            System.out.println("File does not exist = " + e);
+            System.err.println("File does not exist = " + e);
+            System.exit(1);
         }
-
+        System.out.println("All GOOD");
     }
 
     public static void getEnvVars(){
