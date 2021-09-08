@@ -51,17 +51,20 @@ public class SystemCommands {
         Map<String, String> envVar = System.getenv();
         System.out.println("envVar = " + envVar);
 
-        String username = System.getenv("USERNAME");
-        System.out.println("username = " + username);
+        String username = System.getenv("USER");
+        System.out.println("USER = " + username);
 
-        String javaHome = System.getenv("JAVA_HOME");
-        System.out.println("javaHome = " + javaHome);
+        String javaHome = System.getenv("HOME");
+        System.out.println("HOME = " + javaHome);
 
-        String temp = envVar.get("TEMP");
-        System.out.println("temp = " + temp);
+        String temp = envVar.get("LOGNAME");
+        System.out.println("LOGNAME = " + temp);
 
+        String path = envVar.get("PATH");
+        System.out.println("PATH = " + path);
 
-        String path = envVar.get("Path");
-        System.out.println("path = " + path);
+        for(String key: envVar.keySet()) {
+            System.out.println(key + " = " + envVar.get(key));
+        }
     }
 }
