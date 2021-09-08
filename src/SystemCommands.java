@@ -60,6 +60,7 @@ public class SystemCommands {
         String temp = envVar.get("TEMP");
         System.out.println("temp = " + temp);
 
+
         String path = envVar.get("Path");
         System.out.println("path = " + path);
     }
