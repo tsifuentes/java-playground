@@ -1,3 +1,5 @@
+import java.util.Random;
+
 public class MathClass {
     public static void main(String[] args) {
         int absolut = Math.abs(-12);
@@ -30,5 +32,15 @@ public class MathClass {
 
         System.out.println("Math.sin(radians) = " + Math.sin(radians));
         System.out.println("Math.cos(radians) = " + Math.cos(radians));
+
+        double random = Math.random();
+        System.out.println("random = " + random);
+
+        random = Math.floor(random);
+        System.out.println("floor random = " + random);
+
+        Random randomObj = new Random();
+        int randomInt = 25 + randomObj.nextInt(25-15+1);
+        System.out.println("randomInt = " + randomInt);
     }
 }
