@@ -68,4 +68,24 @@ public class SystemCommands {
             System.out.println(key + " = " + envVar.get(key));
         }
     }
+
+    public static void soProgram() {
+        Runtime rt = Runtime.getRuntime();
+        Process process;
+
+        try {
+            if(System.getProperty("os.name").startsWith("Windows")) {
+                process = rt.exec("notepad");
+            } else if(System.getProperty("os.name").startsWith("Mac")) {
+                process = rt.exec("textedit");
+            } else if(System.getProperty("os.name").contains("Nix") || System.getProperty("os.name").contains("Nux")){
+                process = rt.exec("gedit");
+            }
+        } catch (Exception e) {
+            System.err.println("Error: " + e.getMessage());
+            System.exit(1);
+        }
+        System.out.println("editor closed");
+        System.exit(0);
+    }
 }
