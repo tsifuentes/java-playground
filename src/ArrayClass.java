@@ -7,7 +7,7 @@ public class ArrayClass {
         arrayStrings();
     }
 
-    public static void arrayIntegers(){
+    public static void arrayIntegers() {
         int[] numbers = new int[4];
 
         numbers[0] = 12;
@@ -15,8 +15,16 @@ public class ArrayClass {
         numbers[2] = Integer.valueOf("13");
         numbers[numbers.length - 1] = 4;
 
-        for (int number: numbers){
+        for (int number : numbers) {
             System.out.println("number = " + number);
+        }
+
+        double[] emptyArray = new double[4];
+        for (int i = 0; i < 4; i++) {
+            emptyArray[i] = Math.random();
+        }
+        for (double number : emptyArray) {
+            System.out.println("number emptyArray = " + number);
         }
     }
 
