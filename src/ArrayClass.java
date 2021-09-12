@@ -41,5 +41,13 @@ public class ArrayClass {
         for(String string: strings){
             System.out.println("string = " + string);
         }
+
+        String[] stringsDesc = {
+                "Thomas", "Israel", "Nataly", "Rocio", "Norman", "Jose", "Rosa", "Jaris", "Nikis", "Carmen"
+        };
+
+        for (int i = stringsDesc.length-1; i >= 0; i--) {
+            System.out.println("stringsDesc[ " + i + " ] = " + stringsDesc[i]);
+        }
     }
 }
