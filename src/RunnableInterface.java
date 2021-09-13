@@ -34,6 +34,7 @@ public class RunnableInterface {
         new Thread(new RunnableI("Martinez")).start();
 
         inside();
+        runnableWithLambda();
     }
 
     public static void inside() {
@@ -49,5 +50,13 @@ public class RunnableInterface {
         new Thread(runnable, "Luchito").start();
         new Thread(runnable, "Daniel").start();
         new Thread(runnable, "Jota").start();
+    }
+
+    public static void runnableWithLambda() {
+        Runnable runnable = () -> {
+            System.out.println("Lambda = " + Thread.currentThread());
+        };
+        new Thread(runnable, "Luchito").start();
+        new Thread(runnable, "Daniel").start();
     }
 }
