@@ -11,7 +11,7 @@ class RunnableI implements Runnable{
 
     @Override
     public void run() {
-        for (int i = 0; i < 10; i++) {
+        for (int i = 0; i < 5; i++) {
             System.out.println(i + " = " + name);
             try {
                 Thread.sleep(1000);
@@ -32,5 +32,22 @@ public class RunnableInterface {
         new Thread(new RunnableI("Israel")).start();
         new Thread(new RunnableI("Sifuentes")).start();
         new Thread(new RunnableI("Martinez")).start();
+
+        inside();
+    }
+
+    public static void inside() {
+        Runnable runnable = new Runnable(){
+
+            @Override
+            public void run() {
+                System.out.println(Thread.currentThread());
+            }
+        };
+
+        new Thread(runnable, "Norman").start();
+        new Thread(runnable, "Luchito").start();
+        new Thread(runnable, "Daniel").start();
+        new Thread(runnable, "Jota").start();
     }
 }
