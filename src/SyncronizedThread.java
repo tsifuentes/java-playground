@@ -29,6 +29,14 @@ public class SyncronizedThread {
         v1.start();
         v2.start();
         v3.start();
+        try {
+            v1.join();
+            v2.join();
+            v3.join();
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        System.out.println("End of process without waiting");
     }
     public static void showMessageNotSync(String phrase1, String phrase2) throws InterruptedException {
         System.out.print(phrase1);
