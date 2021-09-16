@@ -22,30 +22,27 @@ class RunnableClass implements Runnable {
     }
 }
 public class SyncronizedThread {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws InterruptedException {
         Thread v1 = new Thread(new RunnableClass("Hola, ", "Soy Thomas", true));
         Thread v2 = new Thread(new RunnableClass("Como ", "estas?", true));
         Thread v3 = new Thread(new RunnableClass("Vamos a ", "divertirnos", true));
         v1.start();
         v2.start();
         v3.start();
-        try {
-            v1.join();
-            v2.join();
-            v3.join();
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
+        v1.join();
+        v2.join();
+        v3.join();
+        Thread.sleep(1000);
         System.out.println("End of process without waiting");
     }
     public static void showMessageNotSync(String phrase1, String phrase2) throws InterruptedException {
         System.out.print(phrase1);
-        Thread.sleep(500);
+        Thread.sleep(1000);
         System.out.println(phrase2);
     }
     public synchronized static void showMessageSync(String phrase1, String phrase2) throws InterruptedException {
         System.out.print(phrase1);
-        Thread.sleep(500);
+        Thread.sleep(1000);
         System.out.println(phrase2);
     }
 }
